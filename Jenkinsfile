@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     // Build the backend Docker image
-                    sh 'docker build -t DATABASE_URL="${DATABASE_URL}" $BACKEND_IMAGE:$DOCKER_TAG .'
+                    sh 'docker build -t  $BACKEND_IMAGE:$DOCKER_TAG --build-arg DATABASE_URL="${DATABASE_URL}" .'
                 }
             }
         }
