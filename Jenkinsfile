@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS = credentials('eb9c1cbf-8638-4a36-b866-dd6beb6471b0')
         BACKEND_IMAGE = 'sidharthsingh7/rusty_backend'
-        DOCKER_TAG = 'latest'
+        DOCKER_TAG = 'dev'
     }
 
     stages {
@@ -31,7 +31,7 @@ pipeline {
         {
             steps {
                 script {
-                    sh 'curl -X POST "http://ec2-3-7-69-234.ap-south-1.compute.amazonaws.com:3002/webhook"'
+                    sh 'curl -X GET "http://ec2-3-7-69-234.ap-south-1.compute.amazonaws.com:3002/webhook"'
                 }
             }
         }
