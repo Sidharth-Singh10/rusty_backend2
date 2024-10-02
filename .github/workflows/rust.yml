@@ -14,13 +14,13 @@ env:
   ALLOWED_ORIGINS: "http://localhost:3000,http://yourdomain.com"
 
 jobs:
-  # test:
-  #   name: Test
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: dtolnay/rust-toolchain@stable
-  #     - run: cargo test --all-features
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo test --all-features
 
   fmt:
     name: Rustfmt
